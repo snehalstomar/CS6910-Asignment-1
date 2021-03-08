@@ -3,6 +3,6 @@
 This is a repository for all tasks done as part of Assignment-1 for the course, **"CS6910: Fundamentals of Deep Learning"**; taught by Prof. Mitesh Khapra @ IITM during the Jan-May 2021 semester. 
 
 Team Members:
-+ Snehal Singh Tomar
-+ Ashish Kumar
++ Snehal Singh Tomar(EE20S006)
++ Ashish Kumar(EE20D006)
 
