@@ -6,3 +6,6 @@ Team Members:
 + Snehal Singh Tomar(EE20S006)
 + Ashish Kumar(EE20D006)
 
+## Mapping between questions and their solutions:
+
+1. Question1 -> cs6910_assignment_1_q1.py 
