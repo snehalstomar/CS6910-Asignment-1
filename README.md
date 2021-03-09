@@ -9,3 +9,4 @@ Team Members:
 ## Mapping between questions and their solutions:
 
 1. Question1 -> cs6910_assignment_1_q1.py 
+2. Question2 -> q2feedfwdNNsubmission.py
