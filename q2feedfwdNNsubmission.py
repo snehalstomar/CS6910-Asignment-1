@@ -110,7 +110,7 @@ class feed_fwd_nn:
 		print("entering last hidden layer")
 		self.layers[self.n_hidden_layers].activation_sigmoid()
 		print("processed last hidden layer")
-		self.out_layer.a = (np.dot(self.layers[self.n_hidden_layers-1].W, self.layers[self.n_hidden_layers-1].h.T) + self.layers[self.n_hidden_layers-1].b.T).T
+		self.out_layer.a = (np.dot(self.layers[self.n_hidden_layers].W, self.layers[self.n_hidden_layers].h.T) + self.layers[self.n_hidden_layers].b.T).T
 		print("processing output function")	
 		self.out_layer.output_fn()
 		return self.out_layer.h
