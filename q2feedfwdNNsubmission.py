@@ -1,5 +1,5 @@
 '''
- Python Program for CS6910-Assignment-1-Q-1
+ Python Program for CS6910-Assignment-1-Q-2
  EE20S006-Snehal Singh Tomar
  EE20D006-Ashish Kumar
 '''
