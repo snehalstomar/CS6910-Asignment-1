@@ -22,15 +22,13 @@ nn = myDLkit.feed_fwd_nn(n_hidden_layers, n_inputs, n_outputs)
 #calling  the backpropagation function on the neural net object
 nn.backProp(in_row_vector, 2) #nn_object.backProp(input_vector, true label(class number) to which the feature vector(image) belongs)	
 
-#assuming eta = 1 for SGD
-#updates for other learning algos can also be done on similar lines
 #updating the biases post calculation of grads by backprop
 for i in nn.grad_wrt_b:
-	nn.layers[i].b = nn.layers[i].b - nn.grad_wrt_b[i].T	
+	nn.layers[i].b = nn.layers[i].b + nn.grad_wrt_b[i].T	
 
 #updating the weights post calculation of grads by backprop
 for i in nn.grad_wrt_W:
-	nn.layers[i].W = nn.layers[i].W - nn.grad_wrt_W[i].T
+	nn.layers[i].W = nn.layers[i].W + nn.grad_wrt_W[i].T
 
 #printing the updated weights and biases
 for i in nn.grad_wrt_b:
