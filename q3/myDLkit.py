@@ -63,7 +63,7 @@ class feed_fwd_nn:
 			for i in range(self.size):
 				self.avg += np.exp(self.a[0, i])
 		#softmax output		
-				def output_fn(self):
+		def output_fn(self):
 			self.averager()
 			for i in range(self.size):
 				self.h[0, i] = np.exp(self.a[0, i]) / self.avg 			
@@ -77,12 +77,22 @@ class feed_fwd_nn:
 		self.layers.append(self.input_layer(self.n_inputs))
 		for i in range(self.n_hidden_layers-1):
 			self.layers.append(self.hidden_layer(self.n_inputs))
-		self.l_Lminus1 = self.layer_before_output(self.n_inputs, self.n_outputs)
+		self.layers.append(self.layer_before_output(self.n_inputs, self.n_outputs))
+		#self.l_Lminus1 = self.layer_before_output(self.n_inputs, self.n_outputs)
 		self.out_layer= self.output_layer(self.n_outputs)
 		self.last_hidden_layer_weights = np.zeros([self.n_outputs, self.n_inputs])
 		self.last_hidden_layer_a = np.zeros([1, self.n_inputs])
 		self.last_hidden_layer_h = np.zeros([1, self.n_inputs])
 		self.last_hidden_layer_b = np.zeros([1, self.n_inputs])
+
+		self.grad_wrt_h ={} 
+		self.grad_wrt_a ={} 
+		self.grad_wrt_b = {}
+		self.grad_wrt_W = {}
+		
+		
+
+
 	def forwardProp(self, data_inputs):
 		print("forwardProp")
 		print("In input Layer")
@@ -96,7 +106,7 @@ class feed_fwd_nn:
 			#print("hidden layer(", i, ").a=", self.layers[i].a)
 			self.layers[i].activation()
 			#print("hidden layer(", i, ").h=", self.layers[i].h)
-		self.layers.append(self.layer_before_output(self.n_inputs, self.n_outputs, self.layers[self.n_hidden_layers-1].h))												
+		self.layers[self.n_hidden_layers] = self.layer_before_output(self.n_inputs, self.n_outputs, self.layers[self.n_hidden_layers-1].h)												
 		print("entering last hidden layer")
 		self.layers[self.n_hidden_layers].activation_sigmoid()
 		self.last_hidden_layer_weights = self.layers[self.n_hidden_layers].W
@@ -108,3 +118,35 @@ class feed_fwd_nn:
 		print("processing output function")	
 		self.out_layer.output_fn()
 		return self.out_layer.h
+
+	def backProp(self, input_vector, true_label):
+		y_hat = self.forwardProp(input_vector)
+		y_actual = np.zeros([1, 10])
+		y_actual[0, true_label] = 1
+		#gradient with respect to output layer for cross entropy loss
+		grad_vec_wrt_output = -(y_actual.T - y_hat.T);#(kx1)
+		self.grad_wrt_a[self.n_hidden_layers+1] = grad_vec_wrt_output
+		#print(grad_vec_wrt_output)
+		#gradient with respect to 'h' last hidden layer
+		h_grad_last = np.zeros([self.n_inputs, 1])
+		a_grad_last = np.zeros([self.n_inputs, 1])
+		for i in range(self.n_inputs):
+			h_grad_last[i, 0] = np.dot(self.last_hidden_layer_weights[:,i].T, grad_vec_wrt_output)
+		self.grad_wrt_h[self.n_hidden_layers] = h_grad_last
+		
+		for i in range(self.n_inputs):
+			a_grad_last[i, 0] = h_grad_last[i,0] * self.last_hidden_layer_h[0, i] * (1 - self.last_hidden_layer_h[0, i])
+		self.grad_wrt_a[self.n_hidden_layers] = a_grad_last	  	
+		self.grad_wrt_b[self.n_hidden_layers] = self.grad_wrt_a[self.n_hidden_layers]
+		self.grad_wrt_W[self.n_hidden_layers] = np.dot(self.grad_wrt_a[self.n_hidden_layers+1],self.last_hidden_layer_h)
+		
+		for i in range(self.n_hidden_layers-1, 0, -1):
+			self.grad_wrt_h[i] = np.dot(self.layers[i].W.T, self.grad_wrt_a[i+1])	
+			grad_a_i = np.zeros([self.n_inputs, 1])
+			for j in range(self.n_inputs):
+				grad_a_i[j, 0] = self.grad_wrt_h[i][j,0] * self.layers[i].h[0,j] * (1 - self.layers[i].h[0,j]) 
+			self.grad_wrt_a[i] = grad_a_i
+			self.grad_wrt_b[i] = self.grad_wrt_a[i] 
+			self.grad_wrt_W[i] = np.dot(self.grad_wrt_a[i+1], self.grad_wrt_h[i].T) 
+		self.grad_wrt_W[0] = np.dot(self.grad_wrt_a[1], (np.dot(self.layers[0].W.T, self.grad_wrt_a[1])).T)
+	
