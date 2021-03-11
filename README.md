@@ -13,3 +13,4 @@ Team Members:
 3. Question3 ->
 + q3/myDLkit.py : Our self-defined header containing implementations of the neural net, fwdProp and Backprop.
 + q3/backprop_demo.py : a simple demo of working of the backprop function and the process of updating weights and biases. 
++ Demo on image feature vector: q3/vanillaGradDescent.py
