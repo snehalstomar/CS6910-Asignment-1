@@ -7,12 +7,12 @@ import numpy as np
 import myDLkit #importing our self-defined header containing the feed forward neural network class
 
 #definiing hyper parameters of the nn to be created
-n_inputs = 10
-n_hidden_layers = 8
+n_inputs = 784
+n_hidden_layers = 20
 n_outputs = 10
 
 #defining a test input 
-in_row_vector = np.zeros([1, 10])
+in_row_vector = np.zeros([1, n_inputs])
 for i in range(n_inputs):
 	in_row_vector[0, i] = i
 
@@ -30,14 +30,15 @@ for i in nn.grad_wrt_b:
 
 #updating the weights post calculation of grads by backprop
 for i in nn.grad_wrt_W:
-	nn.layers[i].W = nn.layers[i].W - nn.grad_wrt_W[i].T
+	nn.layers[i].W = nn.layers[i].W - nn.grad_wrt_W[i]
 
+'''
+#This section can be uncommented to view the results.	
 #printing the updated weights and biases
 for i in nn.grad_wrt_b:
 	print(nn.layers[i].b)
 
 for i in nn.grad_wrt_W:
-	print(nn.layers[i].W)
+	print(nn.layers[i].W) 
+'''
 
-
-		

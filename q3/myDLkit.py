@@ -121,7 +121,7 @@ class feed_fwd_nn:
 
 	def backProp(self, input_vector, true_label):
 		y_hat = self.forwardProp(input_vector)
-		y_actual = np.zeros([1, 10])
+		y_actual = np.zeros([1, self.n_outputs])
 		y_actual[0, true_label] = 1
 		#gradient with respect to output layer for cross entropy loss
 		grad_vec_wrt_output = -(y_actual.T - y_hat.T);#(kx1)
@@ -137,7 +137,7 @@ class feed_fwd_nn:
 		for i in range(self.n_inputs):
 			a_grad_last[i, 0] = h_grad_last[i,0] * self.last_hidden_layer_h[0, i] * (1 - self.last_hidden_layer_h[0, i])
 		self.grad_wrt_a[self.n_hidden_layers] = a_grad_last	  	
-		self.grad_wrt_b[self.n_hidden_layers] = self.grad_wrt_a[self.n_hidden_layers]
+		self.grad_wrt_b[self.n_hidden_layers] = grad_vec_wrt_output
 		self.grad_wrt_W[self.n_hidden_layers] = np.dot(self.grad_wrt_a[self.n_hidden_layers+1],self.last_hidden_layer_h)
 		
 		for i in range(self.n_hidden_layers-1, 0, -1):
@@ -149,4 +149,4 @@ class feed_fwd_nn:
 			self.grad_wrt_b[i] = self.grad_wrt_a[i] 
 			self.grad_wrt_W[i] = np.dot(self.grad_wrt_a[i+1], self.grad_wrt_h[i].T) 
 		self.grad_wrt_W[0] = np.dot(self.grad_wrt_a[1], (np.dot(self.layers[0].W.T, self.grad_wrt_a[1])).T)
-	
+		
