@@ -1,3 +1,7 @@
+<div class="text-red mb-2">
+  .text-red on white
+</div>
+
 # CS6910-Asignment-1
 
 This is a repository for all tasks done as part of [Assignment-1](https://wandb.ai/miteshk/assignments/reports/Assignment-1--VmlldzozNjk4NDE?accessToken=r7ndsh8lf4wlxyjln7phvvfb8ftvc0n4lyn4tiowdg06hhzpzfzki4jrm28wqh44) for the course, **"CS6910: Fundamentals of Deep Learning"**; taught by Prof. Mitesh Khapra @ IITM during the Jan-May 2021 semester. 
