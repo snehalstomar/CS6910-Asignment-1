@@ -1,6 +1,4 @@
-<div class="text-red mb-2">
-  .text-red on white
-</div>
+
 
 # CS6910-Asignment-1
 
