@@ -7,7 +7,7 @@ Submitted by:
 #Importing necessary libraries 
 import numpy as np
 import myDLkit#(Our Principal Header-Self Defined)
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from tensorflow.keras.datasets import fashion_mnist
 (x_train, y_train), (x_test, y_test) = fashion_mnist.load_data()
 
@@ -43,16 +43,37 @@ for i in range(epochs_train):       # iterations = n(epochs)
   for j in range(x_train.shape[0]):         #itetrate over all examples
     print("processing image %d of epoch %d" %(j, i))
     norm_x = data_preprocessing(x_train)
-    nn.backProp((norm_x[j,:,:]).reshape(1,-1),y_train[j])      #pass one example at a time
+    #Training starts here
+    nn.backProp((norm_x[j,:,:]).reshape(1,-1),y_train[j]) #pass one example at a time
     errors_train.append(nn.error)
     err = err + nn.error
+    #Defining Preliminaries
+    W_update = {}
+    b_update = {}
+    W_update_t_minus_1 = nn.grad_wrt_W
+    b_update_t_minus_1 = nn.grad_wrt_b
     
+    #Calculating Look ahead gradients
     for m in nn.grad_wrt_b:
-      nn.layers[m].b = nn.layers[m].b - (eta*nn.grad_wrt_b[m].T)
+      nn.layers[m].b = nn.layers[m].b - (eta*b_update_t_minus_1[m].T)
     for p in nn.grad_wrt_W:
-      nn.layers[p].W = nn.layers[p].W - (eta*nn.grad_wrt_W[p])
-  
-
+      nn.layers[p].W = nn.layers[p].W - (eta*W_update_t_minus_1[p])
+    nn.backProp((norm_x[j,:,:]).reshape(1,-1),y_train[j])
+    W_grad_lookAhead = nn.grad_wrt_W
+    b_grad_lookAhead = nn.grad_wrt_b
+    
+    #Calculating the update values for the current iteration
+    for i in W_grad_lookAhead:
+      W_update[i] = (gamma * W_update_t_minus_1[i]) + (eta * W_grad_lookAhead[i])
+    for i in b_grad_lookAhead:
+      b_update[i] = (gamma * b_update_t_minus_1[i]) + (eta * W_grad_lookAhead[i])
+    
+    #Reverting the weights and biases to their state prior to look-ahead(+) and making the updates for the current iteration(-)
+    for q in nn.grad_wrt_b:
+      nn.layers[q].b = nn.layers[q].b + (eta*b_update_t_minus_1[q].T) - (b_update[q].T)
+    for r in nn.grad_wrt_W:
+      nn.layers[r].W = nn.layers[r].W + (eta*W_update_t_minus_1[r]) - (W_update[r])
+    
   print("=============================") #Reporting error and accuracy post each epoch
   print("The overall error after %s epoch: %s" %(i,err/x_train.shape[0]))
   
@@ -70,12 +91,8 @@ for j in range(x_test.shape[0]):         #itetrate over all examples
   nn.backProp((norm_x[j,:,:]).reshape(1,-1),y_test[j])      #pass one example at a time
   errors_test.append(nn.error)
   err = err + nn.error
-  '''
-  for m in nn.grad_wrt_b:
-      nn.layers[m].b = nn.layers[m].b - (eta*nn.grad_wrt_b[m].T)
-    for p in nn.grad_wrt_W:
-      nn.layers[p].W = nn.layers[p].W - (eta*nn.grad_wrt_W[p])
-  '''
+ 
+
 print("=============================")
 print("The overall test-error is  %s. and overall accuracy is %s" %(err/x_test[0], nn.accuracy))
 
