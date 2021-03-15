@@ -13,6 +13,6 @@ Team Members:
 1. Question1 -> cs6910_assignment_1_q1.py 
 2. Question2 -> q2feedfwdNNsubmission.py
 3. Question3 ->
-+ q3/myDLkit.py : Our self-defined header containing implementations of the neural net, fwdProp and Backprop.
-+ q3/backprop_demo.py : a simple demo of working of the backprop function and the process of updating weights and biases. 
-+ Demo on image feature vector: q3/vanillaGradDescent.py
++ q3_staged_for_submission/myDLkit.py : Our self-defined header containing implementations of the neural net, fwdProp and Backprop.
++ q3_staged_for_submission/sgd.py : solution to Q3.i. 
++ q3_staged_for_submission/SNAG.py : solution to q3.iii.
