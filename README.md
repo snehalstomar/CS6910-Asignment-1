@@ -8,6 +8,7 @@ Team Members:
 + Snehal Singh Tomar(EE20S006)
 + Ashish Kumar(EE20D006)
 
+<!---
 ## Mapping between questions and their solutions:
 
 1. Question1 -> cs6910_assignment_1_q1.py 
@@ -15,4 +16,7 @@ Team Members:
 3. Question3 ->
 + q3_staged_for_submission/myDLkit.py : Our self-defined header containing implementations of the neural net, fwdProp and Backprop.
 + q3_staged_for_submission/sgd.py : solution to Q3.i. 
-+ q3_staged_for_submission/SNAG.py : solution to q3.iii.
++ q3_staged_for_submission/SNAG.py : solution to q3.iii. --->
+
+We have taken a fresh approach to the problem from commit Id: f257828871687812a03aadf8f6233d3e6177259a onwards. 
+All new programs are stored in the directory 'assignment-1-v-2/'.  
