@@ -3,6 +3,8 @@ CS6910-Assignment-1
 Submitted by:
 1.EE20S006 Snehal Singh Tomar
 2. EE20D006 Ashish Kumar
+====================================================
+Definition of the Neural Network and its attributes
 '''
 import numpy as np
 
@@ -25,7 +27,7 @@ def derivative_relu(X):
     return X
 
 def derivative_sigmoid(X):
-    SD = sigmoid(X) * (1 - sigmoid(X))
+    SD = activation_sigmoid(X) * (1 - activation_sigmoid(X))
     return SD
 
 def derivative_tanh(X):
@@ -35,7 +37,6 @@ def derivative_tanh(X):
 def softmax(X):
 	e_pow_x = np.exp(X)
 	return e_pow_x / e_pow_x.sum()
-
 
 #Defining the Neural Network Class
 
@@ -47,7 +48,9 @@ class feed_fwd_nn:
 		#0th element->number of elements in input feture vector , last element-> number of bins in which the data needs to be classified  
 	#initialization = random/xavier
 	#activation = Str indicating the type of activation to be used
-	def __init__(self, number_neurons_in_layers, activation, number_layers: int = 1, initialization: str= "random"):
+	#training_parameters = ["optimizer", int->number_epochs, int->batch_size, float->eta, flt->gamma, flt->beta1, flt->beta2 , loss->str,data]
+	#data -> List where ith element corresponds to a tuple: (the ith example which is a feature vector(col. vector), true_label)		
+	def __init__(self, number_neurons_in_layers, activation, training_parameters, number_layers: int = 1, initialization: str= "random"):
 		
 		#Defining preliminaries
 		self.num_layers = number_layers+1 #to accomodate input layer as well
@@ -56,9 +59,19 @@ class feed_fwd_nn:
 		self.activation = activation
 		self.Weights = [] #list containing weights corresponding to each layer
 		self.Biases = [] #list containing biases corresponding to each layer
-		
+		self.optimizer = training_parameters[0] #String->Name of optimizer to be used
+		self.epochs = training_parameters[1]
+		self.batchsize = training_parameters[2]
+		self.eta = training_parameters[3]
+		self.gamma = training_parameters[4]
+		self.beta1 = training_parameters[5]
+		self.beta2 = training_parameters[6]
+		self.loss = training_parameters[7]
+		self.data = training_parameters[8]
+
 		#utility variables
 		self.error = 0.0
+		self.avg_error = 0.0
 		self.accuracy = 0.0
 		self.Y_true_one_hot = np.zeros([self.neurons[-1], 1])
 		
@@ -106,7 +119,7 @@ class feed_fwd_nn:
 				if self.activation == "relu":
 					self.H[i] = acivation_relu(self.A[i])
 				elif self.activation == "sigmoid":
-					self.H[i] = acivation_sigmoid(self.A[i])
+					self.H[i] = activation_sigmoid(self.A[i])
 				elif self.activation == "tanh":
 					self.H[i] = activation_tanh(self.A[i])
 				else:
@@ -159,6 +172,52 @@ class feed_fwd_nn:
 					self.grad_A[i] = np.multiply(self.grad_H[i], derivative_tanh(self.A[i]))	
 				self.grad_Biases[i] = self.grad_A[i+1]
 				self.grad_Weights[i] = np.dot(self.grad_A[i+1], self.H[i].T)
+
+	def train_sgd(self, data, epochs, batchsize, eta):
+		print("training using SGD")
+		for epoch in range(epochs):
+			print("==============in epoch: ", epoch+1, '=====================')
+			for batch in range(int(len(data)/batchsize)):
+				print("processing batch: ", batch+1)
+				#init
+				dW = [i * 0 for i in self.Weights]
+				dB = [i * 0 for i in self.Biases]
+				#print("dW ==>", dW)
+				#print("dB ==>",dB)
+				#calculation of gradients
+				for i in range(batchsize):
+					example = data[(batch * batchsize) + i][0]
+					label = data[(batch * batchsize) + i][1]		
+					self.back_prop(example, self.loss, label)
+					self.avg_error += self.error
+					dW += [i for i in self.grad_Weights]
+					dB += [i for i in self.grad_Biases]
+				#update step
+				update_W = [i * eta / batchsize for i in dW]
+				update_B = [i * eta / batchsize for i in dB]
+				print("update_W==>", update_W)
+				print("update_W==>", update_B)
+				self.Weights = [a - b for a, b in zip(self.Weights, update_W)]	
+				self.Biases = [a - b for a, b in zip(self.Biases, update_B)]
+		self.avg_error = self.avg_error / (self.epochs * len(data))
+		print("==end of trainig, average error = ", self.avg_error)
+	def train(self):
+		if self.optimizer == "sgd":
+			self.train_sgd(self.data, self.epochs, self.batchsize, self.eta)			
+		'''
+		elif self.optimizer == "mbgd":
+			train_mbgd(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+		elif self.optimizer == "nag":
+			train_nag(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+		elif self.optimizer == "rmsprop":
+			train_rmsprop()
+		elif self.optimizer == "adam":
+			train_adam(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+		elif self.optimizer == "nadam":
+			train_nag(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+		'''
+			
+
 				
 
 
