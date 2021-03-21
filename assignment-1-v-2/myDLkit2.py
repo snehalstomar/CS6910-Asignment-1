@@ -100,7 +100,7 @@ class feed_fwd_nn:
 			raise Exception("Invalid initialization method")
 
 
-		print("length of biases at init==>", len(self.Biases))	
+		#print("length of biases at init==>", len(self.Biases))	
 		#Defining lists to store gradients	
 		self.grad_A = self.A.copy()
 		self.grad_H = self.H.copy()
@@ -233,7 +233,7 @@ class feed_fwd_nn:
 				self.Biases = [a - b for a, b in zip(self.Biases, update_B)]
 				#print(" length of biases after update =>",len(self.Biases))
 				self.avg_error = self.avg_error / batchsize
-			print("average error for this batch = ", self.avg_error)
+			print("average error for this epoch = ", self.avg_error)
 			print("accuracy for this epoch =", self.accuracy*(100/len(data)), "%")
 		
 	def train(self):
