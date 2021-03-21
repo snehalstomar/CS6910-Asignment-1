@@ -6,7 +6,7 @@ Submitted by:
 ====================================================
 Tarining the NN using SGD Assignment-1-Q-3-1
 '''
-#Importing Libraris and Self-Defined Headers
+#Importing Libraries and Self-Defined Headers
 import numpy as np
 import myDLkit2
 import myDataExtractor
@@ -18,13 +18,16 @@ num_classes =10 #depends on output
 activation = "sigmoid"
 initialization = "xavier"
 num_inputs=input_data[0][0].shape[0]
-number_neurons = [num_inputs, 64, 32, num_classes]
-training_specifics = ["sgd", 5, 100, 1*np.exp(-4), 0, 0, 0, "cross-entropy", input_data] 
+number_neurons = [num_inputs, 64, 64, num_classes]
+training_specifics = ["sgd", 10, 100, 3*np.exp(-4), 0, 0, 0, "cross-entropy", input_data] 
 
 #Instantitation(Creation of Neural Network)
 nn = myDLkit2.feed_fwd_nn(number_neurons, activation, training_specifics, number_hidden_layers, initialization)
 print("initial Biases==>", nn.Biases)
+print("initial Weights==>", nn.Weights)
 #Training
 nn.train()
 
-print("Trained Biases==>",nn.Biases)
+print("Trained Biases==>",nn.Biases) 	
+print("Trained Weights==>", nn.Weights)
+print(nn.accuracy)

@@ -99,6 +99,8 @@ class feed_fwd_nn:
 		else:
 			raise Exception("Invalid initialization method")
 
+
+		print("length of biases at init==>", len(self.Biases))	
 		#Defining lists to store gradients	
 		self.grad_A = self.A.copy()
 		self.grad_H = self.H.copy()
@@ -126,11 +128,13 @@ class feed_fwd_nn:
 					raise Exception("Invalid activation method")					 
 		self.A_output_layer = np.dot(self.Weights[-1], self.A[-1]) + self.Biases[-1]
 		self.y_hat = softmax(self.A_output_layer)
-		return self.y_hat
+		#return self.y_hat
 
 	#definition of loss function; supported types: cross-entropy, squared-error	
 	def find_Loss(self, Y_pred, loss, true_label):
+		self.Y_true_one_hot.fill(0)
 		self.Y_true_one_hot[true_label, 0] = 1
+		#print(self.Y_true_one_hot)
 		if loss == "cross-entropy":
 			return -np.log(Y_pred[true_label ,0])
 		elif loss == "squared-error":
@@ -142,10 +146,13 @@ class feed_fwd_nn:
 	#input_feature_vector ~ col vector representing input
 	def back_prop(self, input_feature_vector, loss_type, true_label):
 		#Calling Forward Prop to compute a's and h's 
-		self.y_hat = self.fwd_prop(input_feature_vector)
+		self.grad_Weights = [i * 0 for i in self.grad_Weights]
+		self.grad_Biases = [i * 0 for i in self.grad_Biases]
+
+		self.fwd_prop(input_feature_vector)
 		#taking error and accuracy readings
 		self.error = self.find_Loss(self.y_hat, loss_type, true_label)
-		if self.error == 0.0:
+		if np.argmax(self.y_hat) == true_label:
 			self.accuracy += 1
 		#Computing the Gradient wrt pre-activation of output layer 
 		self.grad_A_output_layer = self.y_hat - self.Y_true_one_hot 	
@@ -157,6 +164,7 @@ class feed_fwd_nn:
 				if self.activation == 'relu':
 					self.grad_A[i] = np.multiply(self.grad_H[i], derivative_relu(self.A[i]))
 				if self.activation == 'sigmoid':
+					#print("in sigmoid for layer:", i)
 					self.grad_A[i] = np.multiply(self.grad_H[i], derivative_sigmoid(self.A[i]))
 				if self.activation == 'tanh':
 					self.grad_A[i] = np.multiply(self.grad_H[i], derivative_tanh(self.A[i]))	
@@ -167,40 +175,67 @@ class feed_fwd_nn:
 				if self.activation == 'relu':
 					self.grad_A[i] = np.multiply(self.grad_H[i], derivative_relu(self.A[i]))
 				if self.activation == 'sigmoid':
+					#print("in  else sigmoid for layer:", i)
 					self.grad_A[i] = np.multiply(self.grad_H[i], derivative_sigmoid(self.A[i]))
 				if self.activation == 'tanh':
 					self.grad_A[i] = np.multiply(self.grad_H[i], derivative_tanh(self.A[i]))	
 				self.grad_Biases[i] = self.grad_A[i+1]
 				self.grad_Weights[i] = np.dot(self.grad_A[i+1], self.H[i].T)
-
+			#print("grad_weights_in_back_prop==>", self.grad_Weights)
+			#print("grad_biases_in_back_prop==>", self.grad_Biases)	
+	
 	def train_sgd(self, data, epochs, batchsize, eta):
 		print("training using SGD")
 		for epoch in range(epochs):
+			self.accuracy = 0
 			print("==============in epoch: ", epoch+1, '=====================')
+			#print("length of biases at start of training==>", len(self.Biases))
+			#print("length of Weights at start of training==>", len(self.Weights))
 			for batch in range(int(len(data)/batchsize)):
-				print("processing batch: ", batch+1)
+				#print("processing batch: ", batch+1)
 				#init
 				dW = [i * 0 for i in self.Weights]
+				#print( dW)
 				dB = [i * 0 for i in self.Biases]
-				#print("dW ==>", dW)
-				#print("dB ==>",dB)
+				#print("initial length of dB", len(dB))
+				#print("initial length of dW", len(dW))
 				#calculation of gradients
 				for i in range(batchsize):
 					example = data[(batch * batchsize) + i][0]
 					label = data[(batch * batchsize) + i][1]		
+					#print("********backPropCall********=>", i)
 					self.back_prop(example, self.loss, label)
 					self.avg_error += self.error
-					dW += [i for i in self.grad_Weights]
-					dB += [i for i in self.grad_Biases]
+					#print("length of grad_Weights in loop==>", len(self.grad_Weights))
+					for j in range(len(self.grad_Weights)):
+						dW[j] += self.grad_Weights[j]
+					#dW += [i for i in self.grad_Weights]
+					#print("lenth of dW in loop ==>", len(dW	))
+					#print("length of grad_biases in loop==>", len(self.grad_Biases))
+					for k in range(len(self.grad_Weights)):
+						dB[k] += self.grad_Biases[k]
+					#dB += [i for i in self.grad_Biases]
+					#print("lenth of dB in loop ==>", len(dB))
+					#print("dW==>",dW)
+				
 				#update step
-				update_W = [i * eta / batchsize for i in dW]
-				update_B = [i * eta / batchsize for i in dB]
-				print("update_W==>", update_W)
-				print("update_W==>", update_B)
+				update_W = [i * (eta / batchsize) for i in dW]
+				#print(" length of update_W==>", len(update_W))
+				#print("length of updateW====>", len(update_W))
+				update_B = [i * (eta / batchsize) for i in dB]
+				#print("update_W==>", update_W)
+				#print(" length of update_B==>", len(update_B))
+				#return
 				self.Weights = [a - b for a, b in zip(self.Weights, update_W)]	
+				#print("length of Weights after update-->", len(self.Weights))
+				#print("Biases before update-->",self.Biases[1])
+				#print("lenght of update_B-->", len(update_B))
 				self.Biases = [a - b for a, b in zip(self.Biases, update_B)]
-		self.avg_error = self.avg_error / (self.epochs * len(data))
-		print("==end of trainig, average error = ", self.avg_error)
+				#print(" length of biases after update =>",len(self.Biases))
+				self.avg_error = self.avg_error / batchsize
+			print("average error for this batch = ", self.avg_error)
+			print("accuracy for this epoch =", self.accuracy*(100/len(data)), "%")
+		
 	def train(self):
 		if self.optimizer == "sgd":
 			self.train_sgd(self.data, self.epochs, self.batchsize, self.eta)			
