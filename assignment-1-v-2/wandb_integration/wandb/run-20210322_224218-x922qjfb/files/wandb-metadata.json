@@ -1,0 +1,25 @@
+{
+    "os": "macOS-11.0-arm64-arm-64bit",
+    "python": "3.8.6",
+    "heartbeatAt": "2021-03-22T17:12:20.889201",
+    "startedAt": "2021-03-22T17:12:18.939842",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "--epochs=5",
+        "--learning_rate=0.03"
+    ],
+    "state": "running",
+    "program": "Assignment-1-q3-i.py",
+    "codePath": "assignment-1-v-2/wandb_integration/Assignment-1-q3-i.py",
+    "git": {
+        "remote": "https://github.com/snehalstomar/CS6910-Asignment-1.git",
+        "commit": "e3a58c8d44b21f0e0551b4ee677d30037cc8b58c"
+    },
+    "email": "cooldudesnehal1@gmail.com",
+    "root": "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1",
+    "host": "Parimals-MacBook-Pro.local",
+    "username": "parimalkumar",
+    "executable": "/Users/parimalkumar/DL/bin/python"
+}

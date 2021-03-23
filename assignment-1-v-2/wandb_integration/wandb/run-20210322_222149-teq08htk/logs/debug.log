@@ -1,0 +1,83 @@
+2021-03-22 22:21:49,735 INFO    MainThread:1964 [wandb_setup.py:_flush():69] setting env: {}
+2021-03-22 22:21:49,735 INFO    MainThread:1964 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-03-22 22:21:49,735 INFO    MainThread:1964 [wandb_init.py:_log_setup():334] Logging user logs to /Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/assignment-1-v-2/wandb_integration/wandb/run-20210322_222149-teq08htk/logs/debug.log
+2021-03-22 22:21:49,735 INFO    MainThread:1964 [wandb_init.py:_log_setup():335] Logging internal logs to /Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/assignment-1-v-2/wandb_integration/wandb/run-20210322_222149-teq08htk/logs/debug-internal.log
+2021-03-22 22:21:49,735 INFO    MainThread:1964 [wandb_init.py:init():367] calling init triggers
+2021-03-22 22:21:49,736 INFO    MainThread:1964 [wandb_init.py:init():372] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.001, 'epochs': 2}
+2021-03-22 22:21:49,736 INFO    MainThread:1964 [wandb_init.py:init():416] starting backend
+2021-03-22 22:21:49,736 INFO    MainThread:1964 [backend.py:_multiprocessing_setup():69] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2021-03-22 22:21:49,748 INFO    MainThread:1964 [backend.py:ensure_launched():123] starting backend process...
+2021-03-22 22:21:49,752 INFO    MainThread:1964 [backend.py:ensure_launched():127] started backend process with pid: 1972
+2021-03-22 22:21:49,753 INFO    MainThread:1964 [wandb_init.py:init():421] backend started and connected
+2021-03-22 22:21:49,755 INFO    MainThread:1964 [wandb_init.py:init():461] updated telemetry
+2021-03-22 22:21:49,755 INFO    MainThread:1964 [wandb_init.py:init():480] communicating current version
+2021-03-22 22:21:50,294 INFO    MainThread:1964 [wandb_init.py:init():485] got version response 
+2021-03-22 22:21:50,294 INFO    MainThread:1964 [wandb_init.py:init():493] communicating run to backend with 30 second timeout
+2021-03-22 22:21:50,757 INFO    MainThread:1964 [wandb_init.py:init():518] starting run threads in backend
+2021-03-22 22:21:51,621 INFO    MainThread:1964 [wandb_run.py:_console_start():1480] atexit reg
+2021-03-22 22:21:51,621 INFO    MainThread:1964 [wandb_run.py:_redirect():1343] redirect: SettingsConsole.REDIRECT
+2021-03-22 22:21:51,621 INFO    MainThread:1964 [wandb_run.py:_redirect():1348] Redirecting console.
+2021-03-22 22:21:51,621 INFO    MainThread:1964 [redirect.py:install():213] install start
+2021-03-22 22:21:51,621 INFO    MainThread:1964 [redirect.py:install():228] install stop
+2021-03-22 22:21:51,621 INFO    MainThread:1964 [redirect.py:install():213] install start
+2021-03-22 22:21:51,622 INFO    MainThread:1964 [redirect.py:install():228] install stop
+2021-03-22 22:21:51,622 INFO    MainThread:1964 [wandb_run.py:_redirect():1394] Redirects installed.
+2021-03-22 22:21:51,622 INFO    MainThread:1964 [wandb_init.py:init():542] run started, returning control to user process
+2021-03-22 22:21:51,624 INFO    MainThread:1964 [wandb_watch.py:watch():39] Watching
+2021-03-22 22:21:51,624 ERROR   MainThread:1964 [util.py:get_module():189] Error importing optional module torch
+Traceback (most recent call last):
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/util.py", line 184, in get_module
+    return import_module(name)
+  File "/Users/parimalkumar/.linuxbrew/Caskroom/miniforge/base/envs/DL/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'torch'
+2021-03-22 22:21:51,625 INFO    MainThread:1964 [wandb_run.py:_atexit_cleanup():1450] got exitcode: 1
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [wandb_run.py:_restore():1422] restore
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:uninstall():232] uninstall start
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():287] _stop: stdout
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():293] _stop closed: stdout
+2021-03-22 22:21:51,626 INFO    stdout    :1964 [redirect.py:_pipe_relay():129] relay done saw last write: stdout
+2021-03-22 22:21:51,626 INFO    stdout    :1964 [redirect.py:_pipe_relay():145] relay done done: stdout
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():299] _stop joined: stdout
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():301] _stop rd closed: stdout
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:uninstall():236] uninstall done
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:uninstall():232] uninstall start
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():287] _stop: stderr
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():293] _stop closed: stderr
+2021-03-22 22:21:51,626 INFO    stderr    :1964 [redirect.py:_pipe_relay():129] relay done saw last write: stderr
+2021-03-22 22:21:51,626 INFO    stderr    :1964 [redirect.py:_pipe_relay():145] relay done done: stderr
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():299] _stop joined: stderr
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:_stop():301] _stop rd closed: stderr
+2021-03-22 22:21:51,626 INFO    MainThread:1964 [redirect.py:uninstall():236] uninstall done
+2021-03-22 22:21:52,369 INFO    MainThread:1964 [wandb_run.py:_wait_for_finish():1572] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 799
+  total_bytes: 799
+}
+
+2021-03-22 22:21:55,978 INFO    MainThread:1964 [wandb_run.py:_wait_for_finish():1572] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 799
+  total_bytes: 799
+}
+
+2021-03-22 22:21:57,988 INFO    MainThread:1964 [wandb_run.py:_wait_for_finish():1572] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 2975
+  total_bytes: 2975
+}
+
+2021-03-22 22:21:59,209 INFO    MainThread:1964 [wandb_run.py:_show_files():1794] logging synced files

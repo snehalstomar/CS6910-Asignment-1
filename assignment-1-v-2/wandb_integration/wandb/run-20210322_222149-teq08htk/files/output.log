@@ -1,0 +1,9 @@
+wandb: ERROR wandb.watch only works with pytorch, couldn't import torch.
+Traceback (most recent call last):
+  File "Assignment-1-q3-i.py", line 39, in <module>
+    wandb.watch(nn)
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/sdk/wandb_watch.py", line 62, in watch
+    torch = wandb.util.get_module(
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/util.py", line 191, in get_module
+    raise wandb.Error(required)
+wandb.errors.error.Error: wandb.watch only works with pytorch, couldn't import torch.

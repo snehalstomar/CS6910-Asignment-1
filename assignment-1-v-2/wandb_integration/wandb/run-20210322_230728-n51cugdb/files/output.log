@@ -1,0 +1,46 @@
+training using SGD
+==============in epoch:  1 =====================
+average error for this epoch =  6.082168368261545
+accuracy for this epoch = 10.101851851851853 %
+==============in epoch:  2 =====================
+average error for this epoch =  4.900768568636448
+accuracy for this epoch = 9.957407407407407 %
+==============in epoch:  3 =====================
+average error for this epoch =  8.972119359813155
+accuracy for this epoch = 10.096296296296297 %
+==============in epoch:  4 =====================
+average error for this epoch =  6.778240021133374
+accuracy for this epoch = 9.937037037037037 %
+==============in epoch:  5 =====================
+average error for this epoch =  8.920590851873234
+accuracy for this epoch = 10.183333333333334 %
+==============in epoch:  6 =====================
+average error for this epoch =  10.097015948349982
+accuracy for this epoch = 10.255555555555556 %
+==============in epoch:  7 =====================
+average error for this epoch =  16.782084993916673
+accuracy for this epoch = 10.077777777777778 %
+==============in epoch:  8 =====================
+average error for this epoch =  9.825389002358376
+accuracy for this epoch = 9.948148148148148 %
+==============in epoch:  9 =====================
+average error for this epoch =  19.460436742223894
+accuracy for this epoch = 10.092592592592593 %
+==============in epoch:  10 =====================
+average error for this epoch =  12.008795150724698
+accuracy for this epoch = 10.16851851851852 %
+==============in epoch:  11 =====================
+average error for this epoch =  12.183455724374564
+accuracy for this epoch = 9.931481481481482 %
+==============in epoch:  12 =====================
+average error for this epoch =  13.465024216462501
+accuracy for this epoch = 9.975925925925926 %
+==============in epoch:  13 =====================
+average error for this epoch =  15.793559107869374
+accuracy for this epoch = 10.127777777777778 %
+==============in epoch:  14 =====================
+average error for this epoch =  13.908508394151118
+accuracy for this epoch = 9.883333333333333 %
+==============in epoch:  15 =====================
+average error for this epoch =  13.33149794217749
+accuracy for this epoch = 9.962962962962964 %
