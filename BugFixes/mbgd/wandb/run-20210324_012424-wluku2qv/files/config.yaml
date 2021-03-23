@@ -29,7 +29,7 @@ eta:
   value: 0.001
 initialization:
   desc: null
-  value: xavier
+  value: random
 n_epochs:
   desc: null
   value: 10

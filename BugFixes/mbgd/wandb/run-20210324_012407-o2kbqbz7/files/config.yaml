@@ -29,10 +29,10 @@ eta:
   value: 0.001
 initialization:
   desc: null
-  value: xavier
+  value: random
 n_epochs:
   desc: null
-  value: 10
+  value: 5
 neurons_layer_1:
   desc: null
   value: 64

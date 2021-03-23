@@ -21,3 +21,11 @@ accuracy for this epoch = 10.070370370370371 %
 average error for this epoch =  2.35121491301817
 accuracy for this epoch = 10.088888888888889 %
 ==============in epoch:  8 =====================
+average error for this epoch =  2.3505813012332015
+accuracy for this epoch = 10.081481481481482 %
+==============in epoch:  9 =====================
+average error for this epoch =  2.3501429377646637
+accuracy for this epoch = 10.070370370370371 %
+==============in epoch:  10 =====================
+average error for this epoch =  2.349803867751955
+accuracy for this epoch = 10.05 %
