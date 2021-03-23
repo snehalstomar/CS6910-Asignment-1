@@ -234,11 +234,14 @@ class feed_fwd_nn:
 					#print("dW==>",dW)
 				
 				#update step
-				update_W = [gamma * i for i in VW]  +  [i * (eta / batchsize) for i in dW]
+				update_W = [gamma * i for i in VW]    
+				dW = [i * (eta / batchsize) for i in dW]
+				update_W = [a + b for a, b in zip(update_W, dW)]
 				#print(" length of update_W==>", len(update_W))
 				#print("length of updateW====>", len(update_W))
-				update_B = [gamma * i for i in VB] + [i * (eta / batchsize) for i in dB]
-
+				update_B = [gamma * i for i in VB]  
+				dB = [i * (eta / batchsize) for i in dB]
+				update_B = [a + b for a, b in zip(update_B, dB)]
 				self.vw = update_W
 				self.vb =update_B
 
@@ -256,7 +259,7 @@ class feed_fwd_nn:
 				self.avg_error = self.avg_error / batchsize
 			print("average error for this epoch = ", self.avg_error)
 			print("accuracy for this epoch =", self.accuracy*(100/len(data)), "%")
-		
+			self.accuracy = self.accuracy*(100/len(data))
 	def train(self):
 		if self.optimizer == "sgd":
 			self.train_sgd(self.data, self.epochs, self.batchsize, self.eta)			

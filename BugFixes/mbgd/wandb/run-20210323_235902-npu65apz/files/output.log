@@ -1,0 +1,12 @@
+training using SGD
+==============in epoch:  1 =====================
+Traceback (most recent call last):
+  File "Assignment-1-q3-i.py", line 43, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 265, in train
+    self.train_mbgd(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 237, in train_mbgd
+    update_W = [gamma * i for i in VW]  +  [i * (eta / batchsize) for i in dW]
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 237, in <listcomp>
+    update_W = [gamma * i for i in VW]  +  [i * (eta / batchsize) for i in dW]
+TypeError: unsupported operand type(s) for /: 'str' and 'int'

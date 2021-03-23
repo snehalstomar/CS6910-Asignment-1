@@ -1,0 +1,21 @@
+program: Assignment-1-q3-ii.py
+method: grid
+metric: 
+  goal: maximize
+  name: accuracy
+parameters:
+  activation:
+    values: ['sigmoid', 'tanh', 'relu'] 
+  eta:
+    values: [0.001, 0.02, 0.5, 1.0, 1.3, 2.3]
+  n_epochs:
+    values: [5, 10]
+  batch_size:
+    values: [16, 32]
+  initialization:
+    values: ['xavier', 'random'] 
+early_terminate:
+  type: hyperband
+  s: 2
+  eta: 3
+  max_iter: 27

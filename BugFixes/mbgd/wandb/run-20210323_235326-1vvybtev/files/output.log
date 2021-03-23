@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "Assignment-1-q3-i.py", line 29, in <module>
+    input_data = data
+NameError: name 'data' is not defined

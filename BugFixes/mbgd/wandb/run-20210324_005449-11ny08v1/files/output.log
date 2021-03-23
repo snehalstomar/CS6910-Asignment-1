@@ -1,0 +1,10 @@
+training using SGD
+==============in epoch:  1 =====================
+Traceback (most recent call last):
+  File "Assignment-1-q3-ii.py", line 43, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 266, in train
+    self.train_mbgd(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 258, in train_mbgd
+    print("average error for this epoch = ", self.avg_error)
+AttributeError: 'feed_fwd_nn' object has no attribute 'avg_error'
