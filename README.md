@@ -22,7 +22,7 @@ Summary of the folder "Assignment-1-with-Wandb"
 
 3.train.py: run this file to train the network
 
-training_statistics =[optimizer,epochs,batchsz,eta, gamma, beta1,beta2, loss, data]
+training_specifics =[optimizer,epochs,batchsz,eta, gamma, beta1,beta2, loss, data]
 
 
 Note: Wandb sweep is integrated with the above files/codes.
