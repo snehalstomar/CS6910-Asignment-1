@@ -1,0 +1,10 @@
+training using SGD
+==============in epoch:  1 =====================
+Traceback (most recent call last):
+  File "conf_mat.py", line 51, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/myDLkit2.py", line 665, in train
+    self.train_sgd(self.data, self.epochs, self.batchsize, self.eta)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/myDLkit2.py", line 625, in train_sgd
+    if label > 9:
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()

@@ -1,0 +1,31 @@
+2021-03-24 21:20:45,312 INFO    MainThread:8180 [wandb_setup.py:_flush():69] setting env: {}
+2021-03-24 21:20:45,313 INFO    MainThread:8180 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-03-24 21:20:45,313 INFO    MainThread:8180 [wandb_init.py:_log_setup():334] Logging user logs to /Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/wandb/run-20210324_212045-21xe5zk1/logs/debug.log
+2021-03-24 21:20:45,313 INFO    MainThread:8180 [wandb_init.py:_log_setup():335] Logging internal logs to /Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/wandb/run-20210324_212045-21xe5zk1/logs/debug-internal.log
+2021-03-24 21:20:45,313 INFO    MainThread:8180 [wandb_init.py:init():367] calling init triggers
+2021-03-24 21:20:45,313 INFO    MainThread:8180 [wandb_init.py:init():372] wandb.init called with sweep_config: {}
+config: {'optimizer': 'sgd', 'batchsz': 16, 'init': 'xavier', 'activation': 'tanh', 'num_hidden_layers': 3, 'learning_rate': 0.001, 'epochs': 10}
+2021-03-24 21:20:45,313 INFO    MainThread:8180 [wandb_init.py:init():416] starting backend
+2021-03-24 21:20:45,313 INFO    MainThread:8180 [backend.py:_multiprocessing_setup():69] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2021-03-24 21:20:45,326 INFO    MainThread:8180 [backend.py:ensure_launched():123] starting backend process...
+2021-03-24 21:20:45,330 INFO    MainThread:8180 [backend.py:ensure_launched():127] started backend process with pid: 8189
+2021-03-24 21:20:45,331 INFO    MainThread:8180 [wandb_init.py:init():421] backend started and connected
+2021-03-24 21:20:45,333 INFO    MainThread:8180 [wandb_init.py:init():461] updated telemetry
+2021-03-24 21:20:45,333 INFO    MainThread:8180 [wandb_init.py:init():480] communicating current version
+2021-03-24 21:20:45,485 WARNING MainThread:8180 [wandb_init.py:init():763] interrupted
+Traceback (most recent call last):
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 743, in init
+    run = wi.init()
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/sdk/wandb_init.py", line 481, in init
+    ret = backend.interface.communicate_check_version(
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 767, in communicate_check_version
+    result = self._communicate(rec)
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 527, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/Users/parimalkumar/DL/lib/python3.8/site-packages/wandb/sdk/interface/interface.py", line 82, in get
+    is_set = self._object_ready.wait(timeout)
+  File "/Users/parimalkumar/.linuxbrew/Caskroom/miniforge/base/envs/DL/lib/python3.8/threading.py", line 558, in wait
+    signaled = self._cond.wait(timeout)
+  File "/Users/parimalkumar/.linuxbrew/Caskroom/miniforge/base/envs/DL/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt

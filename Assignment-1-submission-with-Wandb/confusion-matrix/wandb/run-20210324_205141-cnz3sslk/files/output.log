@@ -1,0 +1,14 @@
+training using SGD
+==============in epoch:  1 =====================
+Traceback (most recent call last):
+  File "conf_mat.py", line 51, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/myDLkit2.py", line 663, in train
+    self.train_sgd(self.data, self.epochs, self.batchsize, self.eta)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/myDLkit2.py", line 625, in train_sgd
+    self.back_prop(example, self.loss, label)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/myDLkit2.py", line 195, in back_prop
+    self.error = self.find_Loss(self.y_hat, loss_type, true_label)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/Assignment-1-submission-with-Wandb/confusion-matrix/myDLkit2.py", line 175, in find_Loss
+    self.Y_true_one_hot[true_label, 0] = 1
+IndexError: index 37 is out of bounds for axis 0 with size 10
