@@ -10,13 +10,13 @@ Team Members:
 
 
 github link: https://github.com/snehalstomar/CS6910-Asignment-1
-Acess the final code in folder "Assignment-1-with-Wandb"
+Access the final code in folder "Assignment-1-with-Wandb"
 
 _____________________________________________________________________________________________________________________________
 
 Summary of the folder "Assignment-1-with-Wandb"
 
-1.MyDataExtractor.py : to extrate train, test and validation data
+1.MyDataExtractor.py : to extrat train, test and validation data
 
 2.myDLkit2.py: contains all major function such as forward prop, back prop, different optimizers functions
 
