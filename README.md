@@ -1,5 +1,4 @@
-Note to the evaluators: This is not our final submission. We will be submitting our programs and report soon.
-
+Note to the evaluators: We have made our submission via an email to TA's since the gradescope portal wasn't accepting submissions.
 # CS6910-Asignment-1
 
 This is a repository for all tasks done as part of [Assignment-1](https://wandb.ai/miteshk/assignments/reports/Assignment-1--VmlldzozNjk4NDE?accessToken=r7ndsh8lf4wlxyjln7phvvfb8ftvc0n4lyn4tiowdg06hhzpzfzki4jrm28wqh44) for the course, **"CS6910: Fundamentals of Deep Learning"**; taught by Prof. Mitesh Khapra @ IITM during the Jan-May 2021 semester. 
@@ -12,8 +11,10 @@ Team Members:
 github link: https://github.com/snehalstomar/CS6910-Asignment-1
 Access the final code in folder "Assignment-1-with-Wandb"
 
+All programs have been tested for Python3.8
 _____________________________________________________________________________________________________________________________
 
+Run best-accuracy/loss-comparator.py to view our best results with respect to model accuracy. 
 Summary of the folder "Assignment-1-with-Wandb"
 
 1.MyDataExtractor.py : to extrat train, test and validation data

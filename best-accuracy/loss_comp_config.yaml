@@ -1,0 +1,15 @@
+program: loss-comparator.py
+method: grid
+metric: 
+  goal: maximize
+  name: accuracy
+parameters:
+  loss:
+    values: ['squared-error', 'cross-entropy']
+  eta:
+    values: [0.01, 0.02, 0.03, 0.04] 
+early_terminate:
+  type: hyperband
+  s: 2
+  eta: 3
+  max_iter: 27
