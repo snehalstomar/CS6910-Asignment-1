@@ -16,12 +16,15 @@ ________________________________________________________________________________
 
 Summary of the folder "Assignment-1-with-Wandb"
 
-+1.MyDataExtractor.py : to extrate train, test and validation data
-+2.myDLkit2.py: contains all major function such as forward prop, back prop, different optimizers functions
-+3.train.py: run this file to train the network
-+Note: Wandb sweep is integrated with the above files/codes.
+1.MyDataExtractor.py : to extrate train, test and validation data
 
-+* refer /confusion-matix/conf_mat.py for confusion matrix
+2.myDLkit2.py: contains all major function such as forward prop, back prop, different optimizers functions
+
+3.train.py: run this file to train the network
+
+Note: Wandb sweep is integrated with the above files/codes.
+
+* refer /confusion-matix/conf_mat.py for confusion matrix
 
 <!---
 ## Mapping between questions and their solutions:
