@@ -36,7 +36,7 @@ def derivative_tanh(X):
 
 def softmax(X):
 	e_pow_x = np.exp(X)
-	return e_pow_x / e_pow_x.sum()
+	return e_pow_x /e_pow_x.sum()
 
 #Defining the Neural Network Class
 
@@ -234,10 +234,10 @@ class feed_fwd_nn:
 					#print("dW==>",dW)
 				
 				#update step
-				update_W = [beta1 * i for i in VW]  +  [i**2 * (1-beta1) for i in dW]
+				update_W = [beta1 * i + j**2 *(1-beta1) for i,j in zip(VW,dW)]
 				#print(" length of update_W==>", len(update_W))
 				#print("length of updateW====>", len(update_W))
-				update_B = [beta1 * i for i in VB] + [i**2 * (1-beta1) for i in dB]
+				update_B = [beta1 * i + j**2 *(1-beta1)for i,j in zip(VB,dB)]
 
 				self.vw = update_W
 				self.vb =update_B
@@ -261,6 +261,7 @@ class feed_fwd_nn:
 				self.avg_error = self.avg_error / batchsize
 			print("average error for this epoch = ", self.avg_error)
 			print("accuracy for this epoch =", self.accuracy*(100/len(data)), "%")
+			self.accuracy = self.accuracy*(100/len(data))
 		
 	def train(self):
 		if self.optimizer == "sgd":
