@@ -87,7 +87,7 @@ for i in range(x_valid.shape[0]):
 test =[]
 for i in range(x_test.shape[0]):
   x = x_test[i,0,:]
-  y = x_test[i]
+  y = y_test[i]
   tpl = (x.reshape(784,1),y)
   test.append(tpl)
 
