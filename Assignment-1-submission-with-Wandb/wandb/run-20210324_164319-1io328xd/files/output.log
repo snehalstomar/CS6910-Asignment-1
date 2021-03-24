@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "train.py", line 34, in <module>
+    if num_hidden_layers == 3:
+NameError: name 'num_hidden_layers' is not defined

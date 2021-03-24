@@ -1,0 +1,11 @@
+training using SGD
+==============in epoch:  1 =====================
+accuracy for this epoch = 9.75 %
+==============in epoch:  2 =====================
+accuracy for this epoch = 9.55 %
+==============in epoch:  3 =====================
+accuracy for this epoch = 9.533333333333333 %
+==============in epoch:  4 =====================
+accuracy for this epoch = 9.616666666666667 %
+==============in epoch:  5 =====================
+accuracy for this epoch = 10.033333333333333 %

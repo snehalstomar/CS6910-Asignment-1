@@ -1,0 +1,21 @@
+training using nadam
+==============in epoch:  1 =====================
+/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py:40: RuntimeWarning: overflow encountered in exp
+  e_pow_x = np.exp(X)
+/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py:41: RuntimeWarning: invalid value encountered in true_divide
+  return e_pow_x / e_pow_x.sum()
+/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py:176: RuntimeWarning: divide by zero encountered in log
+  return -np.log(Y_pred[true_label ,0])
+accuracy for this epoch = 10.074074074074074 %
+==============in epoch:  2 =====================
+Traceback (most recent call last):
+  File "train.py", line 43, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 668, in train
+    self.train_nadam(self.data, self.epochs, self.batchsize, self.eta, self.gamma, self.beta2)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 381, in train_nadam
+    self.back_prop(example, self.loss, label)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 220, in back_prop
+    self.grad_Weights[i] = np.dot(self.grad_A[i+1], self.H[i].T)
+  File "<__array_function__ internals>", line 5, in dot
+KeyboardInterrupt

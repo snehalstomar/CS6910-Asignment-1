@@ -1,0 +1,15 @@
+training using nadam
+==============in epoch:  1 =====================
+/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py:40: RuntimeWarning: overflow encountered in exp
+  e_pow_x = np.exp(X)
+/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py:41: RuntimeWarning: invalid value encountered in true_divide
+  return e_pow_x / e_pow_x.sum()
+accuracy for this epoch = 9.283333333333333 %
+==============in epoch:  2 =====================
+accuracy for this epoch = 9.333333333333334 %
+==============in epoch:  3 =====================
+accuracy for this epoch = 9.333333333333334 %
+==============in epoch:  4 =====================
+accuracy for this epoch = 9.333333333333334 %
+==============in epoch:  5 =====================
+accuracy for this epoch = 9.333333333333334 %

@@ -1,0 +1,15 @@
+training using rmsprop
+==============in epoch:  1 =====================
+/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py:176: RuntimeWarning: divide by zero encountered in log
+  self.lossval = -np.log(Y_pred[true_label ,0])
+/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py:41: RuntimeWarning: invalid value encountered in true_divide
+  return e_pow_x / e_pow_x.sum()
+accuracy for this epoch = 9.45 %
+==============in epoch:  2 =====================
+accuracy for this epoch = 9.333333333333334 %
+==============in epoch:  3 =====================
+accuracy for this epoch = 9.333333333333334 %
+==============in epoch:  4 =====================
+accuracy for this epoch = 9.333333333333334 %
+==============in epoch:  5 =====================
+accuracy for this epoch = 9.333333333333334 %

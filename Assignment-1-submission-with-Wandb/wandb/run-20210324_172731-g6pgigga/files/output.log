@@ -1,0 +1,11 @@
+training using mbgd
+==============in epoch:  1 =====================
+accuracy for this epoch = 10.683333333333334 %
+==============in epoch:  2 =====================
+accuracy for this epoch = 9.75 %
+==============in epoch:  3 =====================
+accuracy for this epoch = 9.666666666666666 %
+==============in epoch:  4 =====================
+accuracy for this epoch = 9.65 %
+==============in epoch:  5 =====================
+accuracy for this epoch = 10.116666666666667 %

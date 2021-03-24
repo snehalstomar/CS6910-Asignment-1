@@ -1,0 +1,14 @@
+training using nadam
+==============in epoch:  1 =====================
+Traceback (most recent call last):
+  File "train.py", line 50, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 670, in train
+    self.train_nadam(self.data, self.epochs, self.batchsize, self.eta, self.gamma, self.beta2)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 382, in train_nadam
+    self.back_prop(example, self.loss, label)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 192, in back_prop
+    self.error = self.find_Loss(self.y_hat, loss_type, true_label)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 181, in find_Loss
+    raise Exception("Invalid loss method")
+Exception: Invalid loss method

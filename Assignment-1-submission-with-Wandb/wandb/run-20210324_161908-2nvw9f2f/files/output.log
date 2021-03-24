@@ -1,0 +1,9 @@
+training using SGD
+==============in epoch:  1 =====================
+accuracy for this epoch = 10.014814814814816 %
+==============in epoch:  2 =====================
+accuracy for this epoch = 9.955555555555556 %
+Traceback (most recent call last):
+  File "train.py", line 44, in <module>
+    accuracy = nn.average_accuracy
+AttributeError: 'feed_fwd_nn' object has no attribute 'average_accuracy'

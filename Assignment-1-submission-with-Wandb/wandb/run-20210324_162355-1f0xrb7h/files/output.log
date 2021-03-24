@@ -1,0 +1,15 @@
+training using nag
+==============in epoch:  1 =====================
+accuracy for this epoch = 9.977777777777778 %
+==============in epoch:  2 =====================
+Traceback (most recent call last):
+  File "train.py", line 43, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 662, in train
+    self.train_nag(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 319, in train_nag
+    self.back_prop(example, self.loss, label)
+  File "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1/q4/myDLkit2.py", line 220, in back_prop
+    self.grad_Weights[i] = np.dot(self.grad_A[i+1], self.H[i].T)
+  File "<__array_function__ internals>", line 5, in dot
+KeyboardInterrupt

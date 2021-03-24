@@ -1,0 +1,28 @@
+{
+    "os": "macOS-11.0-arm64-arm-64bit",
+    "python": "3.8.6",
+    "heartbeatAt": "2021-03-24T11:16:19.976842",
+    "startedAt": "2021-03-24T11:16:18.110521",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "--activation=sigmoid",
+        "--batch_size=16",
+        "--learning_rate=0.001",
+        "--n_epochs=5",
+        "--optimizer=nag"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "q4/train.py",
+    "git": {
+        "remote": "https://github.com/snehalstomar/CS6910-Asignment-1.git",
+        "commit": "8c9e28ae528717aeb991891e148ad0eb268bedd9"
+    },
+    "email": "cooldudesnehal1@gmail.com",
+    "root": "/Users/parimalkumar/Documents/Snehal/CS6910-Asignment-1",
+    "host": "Parimals-MacBook-Pro.local",
+    "username": "parimalkumar",
+    "executable": "/Users/parimalkumar/DL/bin/python"
+}
