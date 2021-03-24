@@ -35,7 +35,7 @@ def derivative_tanh(X):
 	return TD
 
 def softmax(X):
-	e_pow_x = np.exp(X)
+	e_pow_x = np.exp((X))
 	return e_pow_x /e_pow_x.sum()
 
 #Defining the Neural Network Class
