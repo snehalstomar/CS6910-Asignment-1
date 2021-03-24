@@ -26,15 +26,4 @@ Note: Wandb sweep is integrated with the above files/codes.
 
 * refer /confusion-matix/conf_mat.py for confusion matrix
 
-<!---
-## Mapping between questions and their solutions:
 
-1. Question1 -> cs6910_assignment_1_q1.py 
-2. Question2 -> q2feedfwdNNsubmission.py
-3. Question3 ->
-+ q3_staged_for_submission/myDLkit.py : Our self-defined header containing implementations of the neural net, fwdProp and Backprop.
-+ q3_staged_for_submission/sgd.py : solution to Q3.i. 
-+ q3_staged_for_submission/SNAG.py : solution to q3.iii. --->
-
-We have taken a fresh approach to the problem from commit Id: f257828871687812a03aadf8f6233d3e6177259a onwards. 
-All new programs are stored in the directory 'assignment-1-v-2/'.  
