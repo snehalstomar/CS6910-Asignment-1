@@ -256,6 +256,7 @@ class feed_fwd_nn:
 				self.avg_error = self.avg_error / batchsize
 			print("average error for this epoch = ", self.avg_error)
 			print("accuracy for this epoch =", self.accuracy*(100/len(data)), "%")
+			self.accuracy = self.accuracy*(100/len(data))
 		
 	def train(self):
 		if self.optimizer == "sgd":
