@@ -234,10 +234,10 @@ class feed_fwd_nn:
 					#print("dW==>",dW)
 				
 				#update step
-				update_W = [gamma * i for i in VW]  +  [i * (eta / batchsize) for i in dW]
+				update_W = [gamma * i + j* (eta/batchsize) for i,j in zip(VW,dW)]
 				#print(" length of update_W==>", len(update_W))
 				#print("length of updateW====>", len(update_W))
-				update_B = [gamma * i for i in VB] + [i * (eta / batchsize) for i in dB]
+				update_B = [gamma * i + (eta/batchsize) for i, j in zip(VB,dB)]
 
 				self.vw = update_W
 				self.vb =update_B
