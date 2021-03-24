@@ -1,0 +1,74 @@
+2021-03-24 01:37:34,865 INFO    MainThread:11768 [wandb_setup.py:_flush():69] setting env: {'entity': 'snehalstomar', 'project': 'cs6910-assignment-1', 'sweep_id': '69yr3gry', 'root_dir': '/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd', 'run_id': 'yb9ywr4h', 'sweep_param_path': '/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/wandb/sweep-69yr3gry/config-yb9ywr4h.yaml'}
+2021-03-24 01:37:34,866 INFO    MainThread:11768 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-03-24 01:37:34,866 INFO    MainThread:11768 [wandb_init.py:_log_setup():334] Logging user logs to /Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/wandb/run-20210324_013734-yb9ywr4h/logs/debug.log
+2021-03-24 01:37:34,866 INFO    MainThread:11768 [wandb_init.py:_log_setup():335] Logging internal logs to /Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/wandb/run-20210324_013734-yb9ywr4h/logs/debug-internal.log
+2021-03-24 01:37:34,866 INFO    MainThread:11768 [wandb_init.py:init():367] calling init triggers
+2021-03-24 01:37:34,866 INFO    MainThread:11768 [wandb_init.py:init():372] wandb.init called with sweep_config: {'activation': 'sigmoid', 'batch_size': 32, 'eta': 1.3, 'initialization': 'random', 'n_epochs': 10}
+config: {'activation': 'sigmoid', 'initialization': 'xavier', 'eta': 0.001, 'n_epochs': 2, 'neurons_layer_1': 64, 'neurons_layer_2': 32}
+2021-03-24 01:37:34,866 INFO    MainThread:11768 [wandb_init.py:init():416] starting backend
+2021-03-24 01:37:34,866 INFO    MainThread:11768 [backend.py:_multiprocessing_setup():69] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2021-03-24 01:37:34,880 INFO    MainThread:11768 [backend.py:ensure_launched():123] starting backend process...
+2021-03-24 01:37:34,884 INFO    MainThread:11768 [backend.py:ensure_launched():127] started backend process with pid: 11775
+2021-03-24 01:37:34,885 INFO    MainThread:11768 [wandb_init.py:init():421] backend started and connected
+2021-03-24 01:37:34,886 INFO    MainThread:11768 [wandb_run.py:_config_callback():733] config_cb None None {'activation': 'sigmoid', 'batch_size': 32, 'eta': 1.3, 'initialization': 'random', 'n_epochs': 10}
+2021-03-24 01:37:34,886 INFO    MainThread:11768 [wandb_init.py:init():461] updated telemetry
+2021-03-24 01:37:34,886 INFO    MainThread:11768 [wandb_init.py:init():480] communicating current version
+2021-03-24 01:37:35,397 INFO    MainThread:11768 [wandb_init.py:init():485] got version response upgrade_message: "wandb version 0.10.23 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2021-03-24 01:37:35,398 INFO    MainThread:11768 [wandb_init.py:init():493] communicating run to backend with 30 second timeout
+2021-03-24 01:37:35,924 INFO    MainThread:11768 [wandb_init.py:init():518] starting run threads in backend
+2021-03-24 01:37:36,884 INFO    MainThread:11768 [wandb_run.py:_console_start():1480] atexit reg
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [wandb_run.py:_redirect():1343] redirect: SettingsConsole.REDIRECT
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [wandb_run.py:_redirect():1348] Redirecting console.
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [redirect.py:install():213] install start
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [redirect.py:install():228] install stop
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [redirect.py:install():213] install start
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [redirect.py:install():228] install stop
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [wandb_run.py:_redirect():1394] Redirects installed.
+2021-03-24 01:37:36,885 INFO    MainThread:11768 [wandb_init.py:init():542] run started, returning control to user process
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [wandb_run.py:_atexit_cleanup():1450] got exitcode: 1
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [wandb_run.py:_restore():1422] restore
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:uninstall():232] uninstall start
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:_stop():287] _stop: stdout
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:_stop():293] _stop closed: stdout
+2021-03-24 01:37:36,910 INFO    stdout    :11768 [redirect.py:_pipe_relay():129] relay done saw last write: stdout
+2021-03-24 01:37:36,910 INFO    stdout    :11768 [redirect.py:_pipe_relay():145] relay done done: stdout
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:_stop():299] _stop joined: stdout
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:_stop():301] _stop rd closed: stdout
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:uninstall():236] uninstall done
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:uninstall():232] uninstall start
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:_stop():287] _stop: stderr
+2021-03-24 01:37:36,910 INFO    MainThread:11768 [redirect.py:_stop():293] _stop closed: stderr
+2021-03-24 01:37:36,910 INFO    stderr    :11768 [redirect.py:_pipe_relay():129] relay done saw last write: stderr
+2021-03-24 01:37:36,910 INFO    stderr    :11768 [redirect.py:_pipe_relay():145] relay done done: stderr
+2021-03-24 01:37:36,911 INFO    MainThread:11768 [redirect.py:_stop():299] _stop joined: stderr
+2021-03-24 01:37:36,911 INFO    MainThread:11768 [redirect.py:_stop():301] _stop rd closed: stderr
+2021-03-24 01:37:36,911 INFO    MainThread:11768 [redirect.py:uninstall():236] uninstall done
+2021-03-24 01:37:37,510 INFO    MainThread:11768 [wandb_run.py:_wait_for_finish():1572] got exit ret: file_counts {
+  wandb_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 924
+  total_bytes: 924
+}
+
+2021-03-24 01:37:39,614 INFO    MainThread:11768 [wandb_run.py:_wait_for_finish():1572] got exit ret: file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 3800
+  total_bytes: 3800
+}
+
+2021-03-24 01:37:41,625 INFO    MainThread:11768 [wandb_run.py:_wait_for_finish():1572] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 5
+}
+pusher_stats {
+  uploaded_bytes: 3800
+  total_bytes: 3800
+}
+
+2021-03-24 01:37:42,855 INFO    MainThread:11768 [wandb_run.py:_show_files():1794] logging synced files

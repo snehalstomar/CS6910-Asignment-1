@@ -1,0 +1,28 @@
+{
+    "os": "macOS-11.0-arm64-arm-64bit",
+    "python": "3.8.6",
+    "heartbeatAt": "2021-03-23T20:37:47.674081",
+    "startedAt": "2021-03-23T20:37:45.794293",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [
+        "--activation=tanh",
+        "--batch_size=32",
+        "--eta=0.02",
+        "--initialization=random",
+        "--n_epochs=5"
+    ],
+    "state": "running",
+    "program": "Assignment-1-q3-ii.py",
+    "codePath": "BugFixes/mbgd/Assignment-1-q3-ii.py",
+    "git": {
+        "remote": "https://github.com/snehalstomar/CS6910-Asignment-1.git",
+        "commit": "0f2a1b3842aeebdad197097c7a6ba53d67f2ca62"
+    },
+    "email": "cooldudesnehal1@gmail.com",
+    "root": "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1",
+    "host": "Parimals-MacBook-Pro.local",
+    "username": "parimalkumar",
+    "executable": "/Users/parimalkumar/DL/bin/python"
+}

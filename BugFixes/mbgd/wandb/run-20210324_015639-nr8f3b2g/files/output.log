@@ -1,0 +1,33 @@
+training using SGD
+==============in epoch:  1 =====================
+average error for this epoch =  392.0125195912573
+accuracy for this epoch = 10.012962962962963 %
+==============in epoch:  2 =====================
+average error for this epoch =  324.8289752301805
+accuracy for this epoch = 9.97037037037037 %
+==============in epoch:  3 =====================
+/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py:148: RuntimeWarning: divide by zero encountered in log
+  return -np.log(Y_pred[true_label ,0])
+average error for this epoch =  inf
+accuracy for this epoch = 9.842592592592593 %
+==============in epoch:  4 =====================
+average error for this epoch =  inf
+accuracy for this epoch = 10.125925925925927 %
+==============in epoch:  5 =====================
+average error for this epoch =  inf
+accuracy for this epoch = 10.051851851851852 %
+==============in epoch:  6 =====================
+average error for this epoch =  inf
+accuracy for this epoch = 10.22962962962963 %
+==============in epoch:  7 =====================
+average error for this epoch =  inf
+accuracy for this epoch = 9.920370370370371 %
+==============in epoch:  8 =====================
+average error for this epoch =  inf
+accuracy for this epoch = 10.005555555555556 %
+==============in epoch:  9 =====================
+average error for this epoch =  inf
+accuracy for this epoch = 10.016666666666667 %
+==============in epoch:  10 =====================
+average error for this epoch =  inf
+accuracy for this epoch = 10.11111111111111 %

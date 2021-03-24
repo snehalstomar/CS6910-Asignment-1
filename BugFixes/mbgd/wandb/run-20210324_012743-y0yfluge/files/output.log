@@ -1,0 +1,14 @@
+training using SGD
+==============in epoch:  1 =====================
+Traceback (most recent call last):
+  File "Assignment-1-q3-ii.py", line 43, in <module>
+    nn.train()
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 268, in train
+    self.train_mbgd(self.data, self.epochs, self.batchsize, self.eta, self.gamma)
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 222, in train_mbgd
+    self.back_prop(example, self.loss, label)
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 161, in back_prop
+    self.fwd_prop(input_feature_vector)
+  File "/Users/parimalkumar/Documents/Snehal/coursesIITMsem2/cs6910-DL/CS6910-Asignment-1/BugFixes/mbgd/myDLkit2.py", line 128, in fwd_prop
+    self.A[i] = np.dot(self.Weights[i-1], self.H[i-1]) + self.Biases[i-1]
+ValueError: operands could not be broadcast together with shapes (32,784) (32,64) 

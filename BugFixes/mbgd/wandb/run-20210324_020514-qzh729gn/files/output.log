@@ -1,0 +1,16 @@
+training using SGD
+==============in epoch:  1 =====================
+average error for this epoch =  2.3650778166699955
+accuracy for this epoch = 10.124074074074075 %
+==============in epoch:  2 =====================
+average error for this epoch =  2.350965197067378
+accuracy for this epoch = 10.148148148148149 %
+==============in epoch:  3 =====================
+average error for this epoch =  2.3441495678368756
+accuracy for this epoch = 10.187037037037037 %
+==============in epoch:  4 =====================
+average error for this epoch =  2.3398034996935646
+accuracy for this epoch = 10.292592592592593 %
+==============in epoch:  5 =====================
+average error for this epoch =  2.3368029314639647
+accuracy for this epoch = 10.301851851851852 %

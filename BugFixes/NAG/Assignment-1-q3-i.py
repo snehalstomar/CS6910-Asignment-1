@@ -11,15 +11,26 @@ import numpy as np
 import myDLkit2
 import myDataExtractor
 
+import wandb
+
+hyperparameter_defaults = dict(
+    activation = "sigmoid",
+    eta = 0.001,
+    n_epochs = 2,
+    )
+
+wandb.init(config=hyperparameter_defaults, project="cs6910-assignment-1")
+config = wandb.config
+
 #Hyper-parmeters
 input_data = myDataExtractor.data
 number_hidden_layers  = 2
 num_classes =10 #depends on output
-activation = "sigmoid"
+activation = config.activation
 initialization = "xavier"
 num_inputs=input_data[0][0].shape[0]
-number_neurons = [num_inputs, 64, 64, num_classes]
-training_specifics = ["nag", 10, 100, 3*np.exp(-4), 0.1, 0, 0, "cross-entropy", input_data] #optimizer,epochs,batchsz,eta, gamma, beta1 &@, loss, data
+number_neurons = [num_inputs, 64, 32, num_classes]
+training_specifics = ["nag", config.n_epochs, 100, config.eta, 0.1, 0, 0, "cross-entropy", input_data] #optimizer,epochs,batchsz,eta, gamma, beta1 &@, loss, data
 
 #Instantitation(Creation of Neural Network)
 nn = myDLkit2.feed_fwd_nn(number_neurons, activation, training_specifics, number_hidden_layers, initialization)
@@ -27,7 +38,9 @@ nn = myDLkit2.feed_fwd_nn(number_neurons, activation, training_specifics, number
 #print("initial Weights==>", nn.Weights)
 #Training
 nn.train()
-
+accuracy = nn.accuracy
+metrics = {'accuracy': accuracy}
+wandb.log(metrics)
 #print("Trained Biases==>",nn.Biases) 	
 #print("Trained Weights==>", nn.Weights)
 #print(nn.accuracy)
