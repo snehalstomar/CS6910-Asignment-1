@@ -11,6 +11,8 @@ Team Members:
 github link: https://github.com/snehalstomar/CS6910-Asignment-1
 Access the final code in folder "Assignment-1-with-Wandb"
 
++ Wandb [Report](https://wandb.ai/snehalstomar/cs6910-assignment-1/reports/CS6910-Assignment-1--Vmlldzo1NTAwODA?accessToken=dvoaabcy3kwbcy0pju4wcnp1qs9k12lyu1o8vydgilyh3n46ztxq46kuep0m9f64)
+
 All programs have been tested for Python3.8
 _____________________________________________________________________________________________________________________________
 
