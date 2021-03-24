@@ -14,8 +14,10 @@ Access the final code in folder "Assignment-1-with-Wandb"
 All programs have been tested for Python3.8
 _____________________________________________________________________________________________________________________________
 
-Run best-accuracy/loss-comparator.py to view our best results with respect to model accuracy. 
-Summary of the folder "Assignment-1-with-Wandb"
+#Run best-accuracy/loss-comparator.py to view our best results with respect to model accuracy. 
+
+
+#Summary of the folder "Assignment-1-with-Wandb", which contains all our other programs: 
 
 1.MyDataExtractor.py : to extrat train, test and validation data
 
